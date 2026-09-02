@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1909 Designs — Vintage &amp; Rustic Home Decor, Lubbock TX</title>
+<meta name="description" content="1909 Designs, 6807 Slide Rd, Lubbock TX. Vintage and rustic home decor, custom furniture, and Junk Gypsy Chalk Paint.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --whitewash: #efeae0;
+    --iron: #2b2b28;
+    --sage: #8a9b7e;
+    --dusty-blue: #7b93a6;
+    --rust: #b5673a;
+    --line: rgba(43,43,40,0.15);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--whitewash);
+    color: var(--iron);
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  .display {
+    font-family: 'Fraunces', serif;
+    font-optical-sizing: auto;
+    line-height: 1.05;
+  }
+
+  a { color: inherit; }
+
+  header { position: sticky; top: 0; z-index: 20; background: var(--whitewash); border-bottom: 1px solid var(--line); }
+
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 18px 24px; max-width: 1080px; margin: 0 auto; }
+  .nav-name { font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.5rem; }
+  .nav-links { display: flex; gap: 28px; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+  .nav-links a { text-decoration: none; }
+  .nav-links a:hover { color: var(--rust); }
+  .nav-cta { background: var(--iron); color: var(--whitewash); padding: 10px 20px; text-decoration: none; font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.05em; }
+
+  @media (max-width: 720px) { .nav-links { display: none; } }
+
+  .hero { background: var(--iron); color: var(--whitewash); padding: 100px 24px 80px; }
+  .hero-inner { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  .eyebrow { font-size: 0.82rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sage); margin-bottom: 20px; font-weight: 700; }
+  .hero h1 { font-size: clamp(2.6rem, 6.5vw, 4.8rem); max-width: 780px; font-weight: 500; }
+  .hero-sub { font-size: 1.1rem; max-width: 480px; margin-top: 24px; color: rgba(239,234,224,0.8); }
+  .hero-cta { display: flex; gap: 16px; margin-top: 36px; flex-wrap: wrap; }
+  .btn { display: inline-block; padding: 14px 28px; text-decoration: none; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; border: 2px solid transparent; }
+  .btn-primary { background: var(--rust); color: var(--whitewash); }
+  .btn-ghost { border-color: var(--whitewash); color: var(--whitewash); }
+
+  .swatch-strip { display: flex; height: 34px; }
+  .swatch-strip span { flex: 1; }
+
+  section { padding: 76px 24px; max-width: 1080px; margin: 0 auto; }
+  .section-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 44px; border-bottom: 1px solid var(--line); padding-bottom: 18px; }
+  .section-head h2 { font-size: clamp(2rem, 4.5vw, 2.8rem); font-weight: 500; }
+  .section-tag { font-size: 0.8rem; color: var(--rust); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; }
+
+  .about { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; }
+  .about p { margin-bottom: 16px; max-width: 54ch; }
+  .about-block { background: var(--iron); color: var(--whitewash); padding: 32px; font-size: 0.9rem; }
+  .about-block dt { color: var(--sage); text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.72rem; margin-top: 20px; font-weight: 700; }
+  .about-block dt:first-child { margin-top: 0; }
+  .about-block dd { margin-top: 4px; }
+
+  @media (max-width: 780px) { .about { grid-template-columns: 1fr; } }
+
+  .paint-callout {
+    background: var(--whitewash);
+    border: 2px solid var(--iron);
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: center;
+  }
+
+  .paint-callout h3 { font-family: 'Fraunces', serif; font-size: 1.7rem; margin-bottom: 12px; font-weight: 500; }
+
+  .chip-row { display: flex; gap: 10px; margin-top: 18px; }
+  .chip { width: 44px; height: 44px; border: 1px solid var(--line); }
+
+  @media (max-width: 780px) { .paint-callout { grid-template-columns: 1fr; } }
+
+  .cat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .cat-card { background: var(--iron); color: var(--whitewash); padding: 28px 22px; border-top: 4px solid var(--sage); }
+  .cat-card:nth-child(2) { border-top-color: var(--dusty-blue); }
+  .cat-card:nth-child(3) { border-top-color: var(--rust); }
+  .cat-card h3 { font-family: 'Fraunces', serif; font-size: 1.2rem; margin-bottom: 10px; font-weight: 500; }
+  .cat-card p { font-size: 0.88rem; color: rgba(239,234,224,0.75); }
+
+  @media (max-width: 780px) { .cat-grid { grid-template-columns: 1fr; } }
+
+  .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .info-card { background: var(--whitewash); padding: 32px; }
+  .info-card h3 { font-family: 'Fraunces', serif; font-size: 1.25rem; color: var(--rust); margin-bottom: 14px; font-weight: 500; }
+  .hours-row { display: flex; justify-content: space-between; font-size: 0.9rem; padding: 5px 0; border-bottom: 1px dashed var(--line); }
+  .hours-row:last-child { border-bottom: none; }
+
+  @media (max-width: 780px) { .info-grid { grid-template-columns: 1fr; } }
+
+  footer { background: var(--iron); color: rgba(239,234,224,0.75); padding: 48px 24px 32px; }
+  .footer-inner { max-width: 1080px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 24px; font-size: 0.85rem; }
+  .footer-name { font-family: 'Fraunces', serif; font-size: 1.5rem; color: var(--whitewash); font-weight: 500; }
+
+  :focus-visible { outline: 2px solid var(--rust); outline-offset: 2px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="nav-name">1909 Designs</div>
+    <nav class="nav-links">
+      <a href="#shop">Shop</a>
+      <a href="#hours">Visit</a>
+    </nav>
+    <a class="nav-cta" href="https://www.facebook.com" target="_blank" rel="noopener">Facebook</a>
+  </div>
+</header>
+
+<section class="hero" style="max-width:none;padding-left:0;padding-right:0;">
+  <div class="hero-inner">
+    <div class="eyebrow">6807 Slide Rd · Lubbock, TX</div>
+    <h1 class="display">Furniture with a past. Paint with a purpose.</h1>
+    <p class="hero-sub">1909 Designs sells vintage and rustic home decor, custom furniture builds, and the full line of Junk Gypsy Chalk Paint.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="https://www.facebook.com" target="_blank" rel="noopener">Message on Facebook</a>
+      <a class="btn btn-ghost" href="#shop">What We Carry</a>
+    </div>
+  </div>
+</section>
+<div class="swatch-strip">
+  <span style="background:var(--sage)"></span>
+  <span style="background:var(--dusty-blue)"></span>
+  <span style="background:var(--rust)"></span>
+  <span style="background:var(--iron)"></span>
+</div>
+
+<section>
+  <div class="section-head">
+    <h2 class="display">The Shop</h2>
+    <div class="section-tag">Slide Road</div>
+  </div>
+  <div class="about">
+    <div>
+      <p>1909 Designs deals in furniture and decor that already has character built in: reclaimed wood, distressed finishes, pieces built to be used and refinished again in twenty years.</p>
+      <p>Custom builds are done in-house, and the shop stocks the full Junk Gypsy Chalk Paint line for anyone refinishing their own piece at home.</p>
+    </div>
+    <dl class="about-block">
+      <dt>Address</dt>
+      <dd>6807 Slide Rd<br>Lubbock, TX 79424</dd>
+      <dt>Specialty</dt>
+      <dd>Custom furniture builds</dd>
+      <dt>Chalk Paint</dt>
+      <dd>Official Junk Gypsy Chalk Paint retailer</dd>
+      <dt>Contact</dt>
+      <dd>Message on Facebook</dd>
+    </dl>
+  </div>
+</section>
+
+<section id="shop">
+  <div class="section-head">
+    <h2 class="display">Junk Gypsy Chalk Paint</h2>
+    <div class="section-tag">In stock</div>
+  </div>
+  <div class="paint-callout">
+    <div>
+      <h3>Full color line, on the shelf</h3>
+      <p>1909 Designs is an official Junk Gypsy Chalk Paint retailer. Come see the colors in person before you commit to a can.</p>
+      <div class="chip-row">
+        <div class="chip" style="background:var(--sage)"></div>
+        <div class="chip" style="background:var(--dusty-blue)"></div>
+        <div class="chip" style="background:var(--rust)"></div>
+        <div class="chip" style="background:#c9c2a8"></div>
+        <div class="chip" style="background:#5f6b52"></div>
+      </div>
+    </div>
+    <div>
+      <p style="max-width:38ch;">Bring a piece by, or bring a photo, and staff will help you pick a color and a finish before you buy.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-head">
+    <h2 class="display">What's In The Shop</h2>
+    <div class="section-tag">Rotates weekly</div>
+  </div>
+  <div class="cat-grid">
+    <div class="cat-card">
+      <h3>Vintage Furniture</h3>
+      <p>Sourced pieces, sold as found or refinished on request.</p>
+    </div>
+    <div class="cat-card">
+      <h3>Custom Builds</h3>
+      <p>Built to order from reclaimed and new lumber.</p>
+    </div>
+    <div class="cat-card">
+      <h3>Chalk Paint &amp; Supplies</h3>
+      <p>Full Junk Gypsy line, brushes, wax, and finishing supplies.</p>
+    </div>
+  </div>
+</section>
+
+<section id="hours">
+  <div class="section-head">
+    <h2 class="display">Find Us</h2>
+    <div class="section-tag">Slide Road</div>
+  </div>
+  <div class="info-grid">
+    <div class="info-card">
+      <h3>Hours</h3>
+      <div class="hours-row"><span>Tue – Fri</span><span>10am – 5pm</span></div>
+      <div class="hours-row"><span>Sat</span><span>10am – 3pm</span></div>
+      <div class="hours-row"><span>Sun – Mon</span><span>Closed</span></div>
+    </div>
+    <div class="info-card">
+      <h3>Address</h3>
+      <p>6807 Slide Rd<br>Lubbock, TX 79424</p>
+    </div>
+    <div class="info-card">
+      <h3>Contact</h3>
+      <p>Message the shop on Facebook for hours, custom orders, or paint questions.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-name">1909 Designs</div>
+      <p style="margin-top:8px;">6807 Slide Rd<br>Lubbock, TX 79424</p>
+    </div>
+    <div>
+      <p>Tue–Fri 10–5 · Sat 10–3</p>
+      <p style="margin-top:8px;">Official Junk Gypsy Chalk Paint retailer</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
