@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moe &amp; Janet's Barber Shop — Lubbock, TX</title>
+<meta name="description" content="Moe &amp; Janet's Barber Shop, 3300 82nd St Ste D, Lubbock TX. Walk-in cuts, fades, and straight-razor shaves.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Libre+Franklin:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1712;
+    --paper: #f1e9d8;
+    --paper-dim: #e7dcc4;
+    --green: #2f4a3c;
+    --green-dark: #21362b;
+    --oxblood: #7a2e2e;
+    --brass: #c08a3e;
+    --line: rgba(26,23,18,0.14);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 17px;
+    line-height: 1.55;
+  }
+
+  .display {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    line-height: 0.92;
+  }
+
+  .mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  a { color: inherit; }
+
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+  .nav-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.04em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .nav-links a { text-decoration: none; }
+  .nav-links a:hover { color: var(--oxblood); }
+
+  .nav-call {
+    background: var(--oxblood);
+    color: var(--paper);
+    padding: 10px 18px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.88rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 720px) {
+    .nav-links { display: none; }
+  }
+
+  .hero {
+    position: relative;
+    padding: 88px 24px 72px;
+    background: var(--green);
+    color: var(--paper);
+    overflow: hidden;
+  }
+
+  .pole {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 34px;
+    background: repeating-linear-gradient(
+      -45deg,
+      var(--oxblood) 0 18px,
+      var(--paper) 18px 36px,
+      var(--green-dark) 36px 54px
+    );
+    background-size: 100% 200%;
+    animation: spin 6s linear infinite;
+  }
+
+  .pole.left { left: 0; }
+  .pole.right { right: 0; }
+
+  @keyframes spin {
+    from { background-position: 0 0; }
+    to { background-position: 0 200%; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pole { animation: none; }
+  }
+
+  .hero-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.82rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin-bottom: 18px;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.2rem, 9vw, 6.8rem);
+    max-width: 900px;
+  }
+
+  .hero-sub {
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 1.15rem;
+    max-width: 480px;
+    margin-top: 22px;
+    color: var(--paper-dim);
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 16px;
+    margin-top: 36px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 14px 26px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.92rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    border: 2px solid transparent;
+  }
+
+  .btn-primary {
+    background: var(--brass);
+    color: var(--green-dark);
+  }
+
+  .btn-ghost {
+    border-color: var(--paper);
+    color: var(--paper);
+  }
+
+  .hero-facts {
+    display: flex;
+    gap: 32px;
+    margin-top: 56px;
+    flex-wrap: wrap;
+  }
+
+  .hero-fact .num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.4rem;
+    color: var(--brass);
+    line-height: 1;
+  }
+
+  .hero-fact .lbl {
+    font-size: 0.82rem;
+    color: var(--paper-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-top: 4px;
+  }
+
+  section { padding: 84px 24px; }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 44px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 18px;
+  }
+
+  .section-head h2 {
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+  }
+
+  .section-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.82rem;
+    color: var(--oxblood);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .about {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 56px;
+  }
+
+  .about p { margin-bottom: 16px; max-width: 52ch; }
+
+  .about-block {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 32px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+  }
+
+  .about-block dt {
+    color: var(--brass);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.75rem;
+    margin-top: 20px;
+  }
+
+  .about-block dt:first-child { margin-top: 0; }
+
+  .about-block dd { margin-top: 4px; }
+
+  @media (max-width: 780px) {
+    .about { grid-template-columns: 1fr; }
+  }
+
+  .board-wrap {
+    background: var(--green-dark);
+    padding: 48px 40px;
+    color: var(--paper);
+    position: relative;
+    background-image:
+      radial-gradient(rgba(241,233,216,0.03) 1px, transparent 1px),
+      radial-gradient(rgba(241,233,216,0.02) 1px, transparent 1px);
+    background-size: 3px 3px, 5px 5px;
+    background-position: 0 0, 2px 2px;
+    border: 10px solid #4a3520;
+  }
+
+  .board-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 0.06em;
+    color: var(--brass);
+    margin-bottom: 28px;
+    text-align: center;
+  }
+
+  .price-list {
+    list-style: none;
+    display: grid;
+    gap: 14px;
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  .price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .price-name {
+    font-size: 1.02rem;
+  }
+
+  .price-dots {
+    flex: 1;
+    border-bottom: 2px dotted rgba(241,233,216,0.35);
+    height: 0.6em;
+  }
+
+  .price-amt {
+    font-size: 1.02rem;
+    color: var(--brass);
+    font-weight: 600;
+  }
+
+  .board-note {
+    text-align: center;
+    margin-top: 28px;
+    font-size: 0.82rem;
+    color: var(--paper-dim);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+
+  .info-card {
+    background: var(--paper);
+    padding: 32px;
+  }
+
+  .info-card h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    color: var(--oxblood);
+    margin-bottom: 14px;
+    letter-spacing: 0.03em;
+  }
+
+  .hours-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.92rem;
+    padding: 5px 0;
+    border-bottom: 1px dashed var(--line);
+  }
+
+  .hours-row:last-child { border-bottom: none; }
+
+  @media (max-width: 780px) {
+    .info-grid { grid-template-columns: 1fr; }
+  }
+
+  .review {
+    border-left: 3px solid var(--oxblood);
+    padding-left: 20px;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .review p {
+    font-size: 1.3rem;
+    font-family: 'Libre Franklin', sans-serif;
+    font-weight: 500;
+  }
+
+  .review cite {
+    display: block;
+    margin-top: 16px;
+    font-style: normal;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.82rem;
+    color: var(--oxblood);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  footer {
+    background: var(--ink);
+    color: var(--paper-dim);
+    padding: 48px 24px 32px;
+  }
+
+  .footer-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+    font-size: 0.85rem;
+  }
+
+  .footer-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    color: var(--paper);
+    letter-spacing: 0.03em;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--brass);
+    outline-offset: 2px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="nav-name">Moe &amp; Janet's</div>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#hours">Hours</a>
+      <a href="#reviews">Reviews</a>
+    </nav>
+    <a class="nav-call" href="tel:+18065550142">Call the Shop</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="pole left" aria-hidden="true"></div>
+  <div class="pole right" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="eyebrow">3300 82nd St, Ste D · Lubbock, TX</div>
+    <h1 class="display">Fresh cuts.<br>No appointment.<br>No attitude.</h1>
+    <p class="hero-sub">Moe and Janet run this shop themselves. You get one of them in the chair, not whoever's free.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="tel:+18065550142">Call the Shop</a>
+      <a class="btn btn-ghost" href="#services">See Prices</a>
+    </div>
+    <div class="hero-facts">
+      <div class="hero-fact">
+        <div class="num">73+</div>
+        <div class="lbl">Reviews on file</div>
+      </div>
+      <div class="hero-fact">
+        <div class="num">Walk-in</div>
+        <div class="lbl">Or call ahead</div>
+      </div>
+      <div class="hero-fact">
+        <div class="num">2</div>
+        <div class="lbl">Barbers, always</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap" style="display:contents;">
+  </div>
+  <div style="max-width:1080px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;width:100%;">
+  <div>
+    <div class="section-tag">The Shop</div>
+    <h2 class="display" style="font-size:clamp(2.2rem,5vw,3.2rem);margin:12px 0 24px;">Two chairs. Two barbers. No corporate name on the sign.</h2>
+    <p>Moe and Janet cut hair on 82nd Street, in the same strip they've worked out of for years. There's no receptionist and no upsell script. You sit down, you say what you want, one of them does it.</p>
+    <p>Fades, tapers, straight-razor edges, kids' cuts. If it's a style a barber can do with clippers and a comb, it's on the list. If you don't know what you want, tell Moe or Janet what you've got going on and they'll tell you what works.</p>
+  </div>
+  <dl class="about-block">
+    <dt>Address</dt>
+    <dd>3300 82nd St, Ste D<br>Lubbock, TX 79423</dd>
+    <dt>Phone</dt>
+    <dd>(806) 555-0142</dd>
+    <dt>Booking</dt>
+    <dd>Walk-ins welcome. Call ahead if you want a specific time.</dd>
+    <dt>Payment</dt>
+    <dd>Cash and card</dd>
+  </dl>
+  </div>
+</section>
+
+<section id="services">
+  <div style="max-width:1080px;margin:0 auto;padding:0 24px;">
+  <div class="section-head">
+    <h2 class="display">What It Costs</h2>
+    <div class="section-tag">Cash or card</div>
+  </div>
+  <div class="board-wrap">
+    <div class="board-title">Today's Prices</div>
+    <ul class="price-list">
+      <li class="price-row"><span class="price-name">Haircut</span><span class="price-dots"></span><span class="price-amt">$20</span></li>
+      <li class="price-row"><span class="price-name">Haircut + Beard Line</span><span class="price-dots"></span><span class="price-amt">$28</span></li>
+      <li class="price-row"><span class="price-name">Skin Fade</span><span class="price-dots"></span><span class="price-amt">$25</span></li>
+      <li class="price-row"><span class="price-name">Straight Razor Shave</span><span class="price-dots"></span><span class="price-amt">$22</span></li>
+      <li class="price-row"><span class="price-name">Kids' Cut (12 &amp; under)</span><span class="price-dots"></span><span class="price-amt">$16</span></li>
+      <li class="price-row"><span class="price-name">Buzz Cut</span><span class="price-dots"></span><span class="price-amt">$15</span></li>
+    </ul>
+    <div class="board-note">Prices confirmed at the chair. Call ahead if you're not sure.</div>
+  </div>
+  </div>
+</section>
+
+<section id="hours">
+  <div style="max-width:1080px;margin:0 auto;padding:0 24px;">
+  <div class="section-head">
+    <h2 class="display">Find Us</h2>
+    <div class="section-tag">82nd &amp; Slide area</div>
+  </div>
+  </div>
+  <div class="info-grid">
+    <div class="info-card">
+      <h3>Hours</h3>
+      <div class="hours-row"><span>Mon</span><span>9am – 6pm</span></div>
+      <div class="hours-row"><span>Tue – Fri</span><span>9am – 6pm</span></div>
+      <div class="hours-row"><span>Sat</span><span>9am – 4pm</span></div>
+      <div class="hours-row"><span>Sun</span><span>Closed</span></div>
+    </div>
+    <div class="info-card">
+      <h3>Address</h3>
+      <p>3300 82nd St<br>Suite D<br>Lubbock, TX 79423</p>
+    </div>
+    <div class="info-card">
+      <h3>Contact</h3>
+      <p>(806) 555-0142<br>Walk-ins welcome<br>Call for a specific time</p>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div style="max-width:1080px;margin:0 auto;padding:0 24px;">
+  <div class="section-head">
+    <h2 class="display">What Regulars Say</h2>
+    <div class="section-tag">73+ on record</div>
+  </div>
+  <div class="review">
+    <p>"Been going here for three years. Same barber, same chair, never a bad cut."</p>
+    <cite>Lubbock regular</cite>
+  </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-name">Moe &amp; Janet's</div>
+      <p style="margin-top:8px;">3300 82nd St, Ste D<br>Lubbock, TX 79423</p>
+    </div>
+    <div>
+      <p>(806) 555-0142</p>
+      <p style="margin-top:8px;">Mon–Fri 9–6 · Sat 9–4 · Sun closed</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
