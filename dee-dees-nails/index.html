@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dee Dee's Nails — Lubbock, TX Since 1987</title>
+<meta name="description" content="Dee Dee's Nails, 3307 83rd St, Lubbock TX. Family-run nail salon, open since 1987.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --plum: #3b1f35;
+    --plum-dark: #2a1526;
+    --porcelain: #f6efe9;
+    --berry: #b23a6b;
+    --gold: #c9a227;
+    --mint: #6fa98c;
+    --line: rgba(59,31,53,0.14);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--porcelain);
+    color: var(--plum);
+    font-family: 'Karla', sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  .display { font-family: 'DM Serif Display', serif; line-height: 1.06; }
+  a { color: inherit; }
+
+  header { position: sticky; top: 0; z-index: 20; background: var(--porcelain); border-bottom: 1px solid var(--line); }
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 18px 24px; max-width: 1080px; margin: 0 auto; }
+  .nav-name { font-family: 'DM Serif Display', serif; font-size: 1.5rem; }
+  .nav-links { display: flex; gap: 28px; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+  .nav-links a { text-decoration: none; }
+  .nav-links a:hover { color: var(--berry); }
+  .nav-cta { background: var(--berry); color: var(--porcelain); padding: 10px 20px; text-decoration: none; font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.05em; }
+
+  @media (max-width: 720px) { .nav-links { display: none; } }
+
+  .hero { background: var(--plum); color: var(--porcelain); padding: 100px 24px 80px; position: relative; overflow: hidden; }
+  .hero-inner { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  .eyebrow { font-size: 0.82rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; font-weight: 700; }
+  .hero h1 { font-size: clamp(2.8rem, 7vw, 5.2rem); max-width: 780px; }
+  .hero-sub { font-size: 1.1rem; max-width: 480px; margin-top: 24px; color: rgba(246,239,233,0.8); }
+  .hero-cta { display: flex; gap: 16px; margin-top: 36px; flex-wrap: wrap; }
+  .btn { display: inline-block; padding: 14px 28px; text-decoration: none; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; border: 2px solid transparent; }
+  .btn-primary { background: var(--gold); color: var(--plum-dark); }
+  .btn-ghost { border-color: var(--porcelain); color: var(--porcelain); }
+
+  .since-badge {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    width: 108px;
+    height: 108px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'DM Serif Display', serif;
+    font-size: 0.85rem;
+    line-height: 1.3;
+    color: var(--gold);
+    transform: rotate(-8deg);
+  }
+
+  @media (max-width: 780px) { .since-badge { display: none; } }
+
+  .polish-strip { display: flex; height: 30px; }
+  .polish-strip span { flex: 1; }
+
+  section { padding: 76px 24px; max-width: 1080px; margin: 0 auto; }
+  .section-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 44px; border-bottom: 1px solid var(--line); padding-bottom: 18px; }
+  .section-head h2 { font-size: clamp(2rem, 4.5vw, 2.8rem); }
+  .section-tag { font-size: 0.8rem; color: var(--berry); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; }
+
+  .about { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; }
+  .about p { margin-bottom: 16px; max-width: 54ch; }
+  .about-block { background: var(--plum); color: var(--porcelain); padding: 32px; font-size: 0.9rem; }
+  .about-block dt { color: var(--gold); text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.72rem; margin-top: 20px; font-weight: 700; }
+  .about-block dt:first-child { margin-top: 0; }
+  .about-block dd { margin-top: 4px; }
+
+  @media (max-width: 780px) { .about { grid-template-columns: 1fr; } }
+
+  .price-list { list-style: none; display: grid; gap: 12px; max-width: 620px; }
+  .price-row { display: flex; align-items: baseline; gap: 12px; }
+  .price-name { font-size: 1.02rem; font-weight: 600; }
+  .price-dots { flex: 1; border-bottom: 2px dotted var(--line); height: 0.6em; }
+  .price-amt { font-size: 1.02rem; color: var(--berry); font-weight: 700; }
+
+  .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .info-card { background: var(--porcelain); padding: 32px; }
+  .info-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--berry); margin-bottom: 14px; }
+  .hours-row { display: flex; justify-content: space-between; font-size: 0.9rem; padding: 5px 0; border-bottom: 1px dashed var(--line); }
+  .hours-row:last-child { border-bottom: none; }
+
+  @media (max-width: 780px) { .info-grid { grid-template-columns: 1fr; } }
+
+  .review { border-left: 3px solid var(--berry); padding-left: 20px; max-width: 640px; }
+  .review p { font-size: 1.3rem; font-family: 'DM Serif Display', serif; }
+  .review cite { display: block; margin-top: 16px; font-style: normal; font-size: 0.8rem; color: var(--berry); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; }
+
+  footer { background: var(--plum); color: rgba(246,239,233,0.75); padding: 48px 24px 32px; }
+  .footer-inner { max-width: 1080px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 24px; font-size: 0.85rem; }
+  .footer-name { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--porcelain); }
+
+  :focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="nav-name">Dee Dee's Nails</div>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#hours">Visit</a>
+      <a href="#reviews">Reviews</a>
+    </nav>
+    <a class="nav-cta" href="tel:+18065550176">Call the Salon</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="since-badge">EST.<br>1987</div>
+  <div class="hero-inner">
+    <div class="eyebrow">3307 83rd St · Lubbock, TX</div>
+    <h1 class="display">Same salon since 1987. That's not a slogan, it's the lease.</h1>
+    <p class="hero-sub">Dee Dee's has been doing nails on 83rd Street for over three decades. No new-owner reset, no rebrand, same standards the whole way through.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="tel:+18065550176">Call the Salon</a>
+      <a class="btn btn-ghost" href="#services">See Services</a>
+    </div>
+  </div>
+</section>
+<div class="polish-strip">
+  <span style="background:var(--berry)"></span>
+  <span style="background:var(--gold)"></span>
+  <span style="background:var(--mint)"></span>
+  <span style="background:var(--plum)"></span>
+</div>
+
+<section>
+  <div class="section-head">
+    <h2 class="display">The Salon</h2>
+    <div class="section-tag">83rd Street</div>
+  </div>
+  <div class="about">
+    <div>
+      <p>Dee Dee's Nails opened on 83rd Street in 1987 and never moved. Regulars have been coming long enough to bring their daughters, then their granddaughters.</p>
+      <p>Manicures, pedicures, acrylic and gel sets, done at a pace that doesn't rush the polish.</p>
+    </div>
+    <dl class="about-block">
+      <dt>Address</dt>
+      <dd>3307 83rd St<br>Lubbock, TX 79423</dd>
+      <dt>Phone</dt>
+      <dd>(806) 555-0176</dd>
+      <dt>Booking</dt>
+      <dd>Walk-ins and appointments</dd>
+      <dt>Payment</dt>
+      <dd>Cash and card</dd>
+    </dl>
+  </div>
+</section>
+
+<section id="services">
+  <div class="section-head">
+    <h2 class="display">Services</h2>
+    <div class="section-tag">Cash or card</div>
+  </div>
+  <ul class="price-list">
+    <li class="price-row"><span class="price-name">Classic Manicure</span><span class="price-dots"></span><span class="price-amt">$22</span></li>
+    <li class="price-row"><span class="price-name">Classic Pedicure</span><span class="price-dots"></span><span class="price-amt">$35</span></li>
+    <li class="price-row"><span class="price-name">Gel Manicure</span><span class="price-dots"></span><span class="price-amt">$35</span></li>
+    <li class="price-row"><span class="price-name">Full Acrylic Set</span><span class="price-dots"></span><span class="price-amt">$45</span></li>
+    <li class="price-row"><span class="price-name">Acrylic Fill</span><span class="price-dots"></span><span class="price-amt">$28</span></li>
+    <li class="price-row"><span class="price-name">Mani + Pedi Combo</span><span class="price-dots"></span><span class="price-amt">$52</span></li>
+  </ul>
+  <p style="margin-top:24px;font-size:0.85rem;color:rgba(59,31,53,0.6);">Prices confirmed at the desk. Call ahead if you're not sure.</p>
+</section>
+
+<section id="hours">
+  <div class="section-head">
+    <h2 class="display">Find Us</h2>
+    <div class="section-tag">83rd &amp; Indiana area</div>
+  </div>
+  <div class="info-grid">
+    <div class="info-card">
+      <h3>Hours</h3>
+      <div class="hours-row"><span>Mon – Fri</span><span>9am – 6pm</span></div>
+      <div class="hours-row"><span>Sat</span><span>9am – 5pm</span></div>
+      <div class="hours-row"><span>Sun</span><span>Closed</span></div>
+    </div>
+    <div class="info-card">
+      <h3>Address</h3>
+      <p>3307 83rd St<br>Lubbock, TX 79423</p>
+    </div>
+    <div class="info-card">
+      <h3>Contact</h3>
+      <p>(806) 555-0176<br>Walk-ins welcome<br>Call ahead for a specific time</p>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="section-head">
+    <h2 class="display">What Regulars Say</h2>
+    <div class="section-tag">Since 1987</div>
+  </div>
+  <div class="review">
+    <p>"My mom took me here as a kid. I still drive across town for it."</p>
+    <cite>Lubbock regular</cite>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-name">Dee Dee's Nails</div>
+      <p style="margin-top:8px;">3307 83rd St<br>Lubbock, TX 79423</p>
+    </div>
+    <div>
+      <p>(806) 555-0176</p>
+      <p style="margin-top:8px;">Mon–Fri 9–6 · Sat 9–5 · Sun closed</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
