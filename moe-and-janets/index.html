@@ -366,8 +366,6 @@
   }
 
   .review {
-    border-left: 3px solid var(--oxblood);
-    padding-left: 20px;
     max-width: 640px;
     margin: 0 auto;
   }
@@ -376,6 +374,16 @@
     font-size: 1.3rem;
     font-family: 'Libre Franklin', sans-serif;
     font-weight: 500;
+  }
+
+  .review p::before {
+    content: '\201C';
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    color: var(--oxblood);
+    display: block;
+    line-height: 0.6;
+    margin-bottom: 12px;
   }
 
   .review cite {
